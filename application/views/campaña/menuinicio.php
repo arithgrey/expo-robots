@@ -35,7 +35,14 @@
 
 	  background: #8ED7F2;
 	}
-
+	table thead{
+		background: none repeat scroll 0% 0% rgba(2, 50, 90, 1);
+	}table thead h5{		
+		color: white;				
+	}
+	table tbody{
+		background: #72D4FB;		
+	}
 </style>
 
 
@@ -45,20 +52,8 @@
 		<h1>Campañas registradas</h1>
 		<ul class="pagination"> <li class="arrow unavailable"><a href="">&laquo;</a></li> <li class="current"><a href="">1</a></li> <li><a href="">2</a></li> <li><a href="">3</a></li> <li><a href="">4</a></li> <li class="unavailable"><a href="">&hellip;</a></li> <li><a href="">12</a></li> <li><a href="">13</a></li> <li class="arrow"><a href="">&raquo;</a></li> </ul>
 
-<table class="large-12 columns">
-<thead >
-	<tr>
-		<th><h5>ID</h5></th>
-		<th><h5>Campaña</h5></th>
-		<th><h5>Descripción</h5></th>		
-		<th><h5>Fecha de registro</h5></th>
-		<th><h5>Evento</h5></th>
+	<div class="large-12 columns" id="listacampañas"></div>
 
-	</tr>
-</thead>
-<tbody id="listacampañas" class='listacampañas'>
-</tbody>
-</table>
 
 </div>
 
@@ -127,7 +122,7 @@
 			<h3>Editanto la <small><p id="campanianame"></p></small></h3>
 		</center>														
 				<form class='edita_campa' id='edita_campa'>																			
-						<div class="large-6 columns">							
+						<div class="large-10 columns">							
 								<span class="label" id='lb_description'>Redacta un nuevo nombre:</span>
 								<input type="text" name="nameedicion" id="nameedicion"/>							
 								<span class="label" id='lb_description'>Redacta una nueva descripción: </span>
@@ -138,18 +133,11 @@
 						</form>				
 						<p class="guardarcambios button [tiny small large large-12 columns]">Guardar cambios</p>										
 						</div>							
-
 						<!--Eliminar , editar, demás detalles-->						
-
-							    <div class='large-6 columns'>
+							    <div class='large-2 columns'>
 						         <div id='panel_section'>
 						           <nav class="center-off-canvas-menu"> 
 						            <ul class="off-canvas-list">
-						             <li><label>QR SOCIAL</label></li>
-						             <li><a href="<?=base_url('index.php/panelcontrol/control')?>">Panel de control</a></li> 
-						              <li><a href="<?=base_url()?>">Home</a></li>
-						              <li><a href="<?=base_url('index.php/zonasqr/principal')?>">Zonas QR</a></li>
-						              <li><a href="<?=base_url('index.php/cuentas/accessacount')?>">Campañas</a></li>        
 						              <li><a class='cancelar' id="cancelar_edit">Cancelar</a></li>
 						              <li><a class='eliminarcamp' id="del_zonam">Eliminar campaña</a></li>
 						              </ul>
@@ -172,7 +160,6 @@
 
 
 
-
 <div class="reveal-modal" id="dlg_del_cam" data-reveal>
 	<h3>Seguro desea eliminar la campaña</h3>
 	<div class="camdelname" id='camdelname'></div>
@@ -186,3 +173,8 @@
 
 	
 
+
+<div class="reveal-modal" id="dlg_detalles_camp" data-reveal>
+	<div id="seguirleyendotext"></div>
+	<a class="close-reveal-modal">&#215;</a>
+</div>

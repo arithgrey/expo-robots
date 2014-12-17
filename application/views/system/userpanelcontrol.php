@@ -16,46 +16,77 @@
 #frecuentes_p{
 	font-size: 1.4em;	
 }
+#repoupdate{
+	background: #01A9DB;
+	color: white ;
+}
+.lab_form{
+	font-size: 1.2em;
+}
+.title_lab{
+	font-size: 1.3em;
+}
+table{
+	background: #00FFBF;
+
+}
+.lab_formulario{
+	font-size: 1.3em;
+}
+
 </style>
 
 <div class='row'>
 	<ul class="pricing-table large-2 columns" id="principal_menu">	
 	<li class='title' id='title'>Configuración</li>
-	<div class='menu' onclick="despliegamenu( 'cuenta');"><li class='bullet-item'><a><h5  class='subheader' >Cuenta <small>administración </small></h5></a></li></div>	
+	<div class='menu' onclick="despliegamenu( 'cuenta');" id='cuenta_s'>
+		<li class='bullet-item'>
+			<a>
+				<h5  class='subheader' >
+					Cuenta 
+					<small>administración </small>
+				</h5>
+		</a>
+		</li>
+	</div>	
 	<div class='menu' onclick="despliegamenu( 'password');"><li class='bullet-item'><a><h5  class='subheader' >Contraseña <small>actualizar datos </small></h5></a></li></div>	
 	<div class='menu' onclick="despliegamenu( 'usuarios');"><li class='bullet-item'><a><h5  class='subheader' >Usuarios <small> que pertenecen a la cuenta </small></h5></a></li></div>	
 	<div class='menu' onclick="despliegamenu('pagos');" ><li class='bullet-item' ><a ><h5  class='subheader'>Pagos <small> consigue más  </small></h5></a></li></div>
 	<div class='menu' onclick="despliegamenu('ayuda');" ><li class='bullet-item' ><a ><h5  class='subheader' id='"+ayuda+"'>Ayuda <small>preguntas frecuentes </small></h5></a></li></div>
 	</ul>
 
+
 	<!-- Administración de cuentas -->
 	<div class='large-10 columns' id='cuentas_configuracion'>
-	<div class='panel'>
+	<div>
 			<h2 class="subheader" >Datos generales <small>de tu cuenta <?=$username?></small></h2>
 			<div class='row'>
 				<div class='large-7 columns'>
 					
 					<form name='form_compani' id="form_compani">
 					<div class="large-12 columns">
-							<span data-tooltip class="has-tip" title="Renombra tu cuenta"><h5 id="extras"class="show-for-large-only">Nombre</h5></span>
+							
+							<label class='lab_form' >Nombre</label>							
 							<input type='text' name='nombre' id="nombre_cuenta" placeholder='<?=$username?>' value='<?=$username?>'/>
 
-							<span data-tooltip class="has-tip" title="Compañia"><h5 id="extras"class="show-for-large-only">Compañia</h5></span>
+							<label class='lab_form' >Compañia</label>
 							<input type='text' name='company' id="company_cuenta" placeholder='compañia'/>
-							
-							<span data-tooltip class="has-tip" title="Asigna un nuevo email"><h5 id="extras"class="show-for-large-only">Correo electrónico</h5></span>
+
+							<label class='lab_form' >Correo electrónico</label>
 							<input type='email' name='email' id="email_cuenta" placeholder='arithgrey@gmail.com' value=''/>	
 
-							<span data-tooltip class="has-tip" title="Asigna un nuevo email"><h5 id="extras"class="show-for-large-only">Número telefónico</h5></span>
+							<label class='lab_form'>Número telefónico</label>
 							<input type='text' name='numerotelefonico' id="numerotelefonico_cuenta" placeholder='5534551924' />							
-							<span data-tooltip class="has-tip" title="Url de la empresa">
-								<h5 id="extras"class="show-for-large-only">Url</h5>
-							</span>
+
+							<label class='lab_form'>Url</label>							
 							<input type='url' name='url' id="urlcompañia_cuenta" class='' placeholder='https://qrsocial/settings/profile'/>									
 					</div>								
 					</form>
-					<p id="repoupdate"></p>
+					
+
+
 					<button id="btn_freshcount">Actualizar</button>
+					<p id="repoupdate"></p>
 				</div>
 				<div class='large-5 columns'>										
 				</div>			
@@ -66,20 +97,23 @@
 
 	<!--Contraseña-->
 	<div class='contra_config large-10 columns' id="contra_config">
-		<div class='panel'>
-			<h2 class="subheader" >Cambiar <small>tu contraseña </small></h2>
+		<div>
+			<h2 class="subheader" >Cambiar <small>tu contraseña de usuario</small></h2>
 			<div class='row'>
 				<div class='large-7 columns'>					
 					<div class="large-12 columns">														
 							<form name="form_pw" id="form_pw">
 
-								<span data-tooltip class="has-tip" title="Antigua contraseña"><h5 class="show-for-large-only">Antigua contraseña</h5></span>
+								<span data-tooltip class="has-tip" title="Antigua contraseña">
+									<label class='lab_formulario' >Antigua contraseña</label>
+								</span>
 								<input type='password' name='oldpassword' id="oldpassword" />	
-								<span data-tooltip class="has-tip" title="Nueva contraseña"><h5 class="show-for-large-only">Nueva contraseña</h5></span>
-								<input type='password' name='newpassword' id="newpassword"/>	
-							
+								<span data-tooltip class="has-tip" title="Nueva contraseña">
+									<label class='lab_formulario' >Nueva contraseña</label>
+								</span>
+								<input type='password' name='newpassword' id="newpassword"/>								
 								<span data-tooltip class="has-tip" title="confirmar contraseña">
-									<h5 class="show-for-large-only">Conformas nueva contraseña</h5>
+									<label class='lab_formulario' >Conformas nueva contraseña</label>
 								</span>							
 							<input type='password' name='passwordconfirm' id='passwordconfirm'/>												
 							<p id="reporte_change"></p>
@@ -96,9 +130,11 @@
 
 	<!--usuarios-->
 	<div class='usuarios_config large-10 columns' id='usuarios_config'>		
-		<div class='panel'>
+		<div >
 			<h2 class="subheader" >Usuarios que pertenecen <small>a la cuenta actualmente</small></h2>
+			<div id="table_users"></div>	
 			
+
 		</div>
 	</div>	
 	
@@ -196,3 +232,4 @@
 		<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
 	</div>
 </div>
+

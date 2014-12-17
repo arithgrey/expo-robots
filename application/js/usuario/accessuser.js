@@ -40,7 +40,7 @@ $(document).on("ready",function(){
 
 			}else{
 
-				$('.repopass').html('<h6>Error en la contraseña</h6>');		
+				$('#repopass').html('<h6>Error en la contraseña</h6>');		
 			}
 
 			

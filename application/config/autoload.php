@@ -52,7 +52,7 @@ $autoload['packages'] = array(APPPATH.'third_party');
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('encrypt', 'session', 'calendar');
+$autoload['libraries'] = array( 'calendar');
 
 
 /*
@@ -64,7 +64,7 @@ $autoload['libraries'] = array('encrypt', 'session', 'calendar');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'html', 'email', 'session', 'date');
+$autoload['helper'] = array('url', 'html', 'email',  'date');
 
 
 /*
@@ -80,7 +80,7 @@ $autoload['helper'] = array('url', 'html', 'email', 'session', 'date');
 |
 */
 
-$autoload['config'] = array();
+
 
 
 /*

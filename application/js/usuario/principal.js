@@ -4,6 +4,7 @@ $(document).on("ready", function(){
 	/*Validamos si el usuario existe*/
 	$('.username').change(function (){
 
+
 			username = $('.username').val();
 			urlpost = now + "index.php/api/usuariorest/userexist/format/json";			
 			expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -120,6 +121,15 @@ $(document).on("ready", function(){
 	});
 
 
+	$(".seguir_leyendo").click(seguir_leyendo);
+
+
 });
 
 
+function seguir_leyendo(){
+	
+	
+	$('#dlgterminos_condiciones').foundation('reveal', 'open');
+
+}

@@ -24,12 +24,10 @@
 
 	
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.css"/>
-	<!--JS-->
-	
+	<!--JS-->	
 	<script type="text/javascript" src="<?=base_url('application/js/jquery-2.1.1.min.js')?>"></script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.3.7/slick.min.js"/></script>
-	<script type="text/javascript" src="<?=base_url('application/js/foundation.min.js')?>"></script>
-	
+	<script type="text/javascript" src="<?=base_url('application/js/foundation.min.js')?>"></script>	
 	<script type="text/javascript" src="<?=base_url('application/js/general.js')?>"></script>	
 	<script src="<?=base_url('application/js/vendor/jquery.js')?>"></script>
 	<script src="<?=base_url('application/js/foundation/foundation.js')?>"></script>
@@ -38,32 +36,70 @@
 	<script src="<?=base_url('application/js/foundation/foundation.js')?>"></script>
 	
 	<script>
-    $(document).foundation();
-  </script>
+    	$(document).foundation();
+  	</script>
+  	<style type="text/css">
+  	.title_general{
+  		font-size: 1.3em;
+
+  	}
+  	#titlemain{
+  		background: rgba(13, 72, 99, 1);
+  		color:  white;
+  		font-size: 1.5em;
+  	}
+  	#mensaje_camp{
+  		display: none;
+  	}
+  	</style>
+
 
 </head>
 <body>
 	<header>
 		
-		<a href="<?=base_url('index.php/principal/logout')?>" data-reveal-id="firstModal" class="radius button">Logout&hellip;</a>
+		<div class='row'>
+			<div class='large-4 columns'>
+				<a href="<?=base_url('index.php/principal/logout')?>" data-reveal-id="firstModal" class="radius button">
+					→ Logout »
+				</a>		
+			</div>
+
+			<label class='large-4 columns title_general'><?=$nombrecuentaact?></label>
+			<label class='large-4 columns title_general'><?=$username?></label>
+
+		</div>
+							
 		<div class="row">			
 			<div class='row'> 
 				<div class='row'>
 	
-	<dl class="sub-nav"> 		
-		<dd class="" id='panelcontrol_menu'>
-			<a href="<?=base_url('index.php/panelcontrol/control')?>">Panel de control</a>
-		</dd> 
-		<dd id="home_menu">
-			<a href="<?=base_url()?>">Home</a>
-		</dd> 
-		<dd id='zonasqr_menu'>
-			<a href="<?=base_url('index.php/zonasqr/principal')?>">Zonas QR</a>
-		</dd> 
-		<dd id='campanias_menu'>
-			<a href="<?=base_url('index.php/cuentas/accessacount')?>">Campañas</a>
-		</dd> 
+	
+	<dl class="sub-nav"> 	
+			
+			<dd class="" id='panelcontrol_menu'>
+				<a href="<?=base_url('index.php/panelcontrol/control')?>">Panel de control </a>
+			</dd> 
+			<dd id="home_menu">
+				<a href="<?=base_url()?>">Home</a>
+			</dd> 
+			<dd id='zonasqr_menu'>
+				<a href="<?=base_url('index.php/zonasqr/principal')?>">Zonas QR </a>
+			</dd> 
+			<dd id='campanias_menu'>
+				<a href="<?=base_url('index.php/cuentas/accessacount')?>">Campañas </a>
+			</dd>
+
+			<dd id='mensaje_camp'>
+				<a href="<?=base_url('index.php/cuentas/accessacount')?>">Mensajes</a>
+			</dd>
+
+
+				
 	</dl>
+	
+
+
 </div>
 
 </div>
@@ -73,21 +109,10 @@
 
 
 				<div class='large-4 columns' >
-					<h2 ><?=$titulo?></h2>
+					<p id="titlemain" ><?=$titulo?></p>
 					<div class="progress [radius round]"> 
 		<span class="meter" style="width:70%;"></span> 
- </div> 
-					<div class='row'>
-						<div class='large-6 columns'>
-
-						</div>
-						<div class='large-6 columns'>
-							<h5 class="subheader"><?=$username?></h5>
-
-						</div>
-
-
-					</div>
+ </div> 					
 					
 				</div>
 			</div>										
